@@ -7,7 +7,7 @@
   </prerequisites>
   <groupId>org.scala-ide</groupId>
   <artifactId>org.scala-ide.scalatest.build</artifactId>
-  <version>0.9.3</version>
+  <version>2.9.3-SNAPSHOT</version>
   <name>Build project for the scalatest support in Scala IDE</name>
   <packaging>pom</packaging>
 
