@@ -77,6 +77,7 @@ import com.ibm.icu.text.MessageFormat
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy
 import org.eclipse.jdt.launching.IJavaLaunchConfigurationConstants
 import org.eclipse.core.runtime.CoreException
+import org.scalaide.core.FromScalaPlugin
 import org.scalaide.core.ScalaPlugin
 import org.eclipse.core.runtime.IAdaptable
 import org.scalaide.core.internal.jdt.model.ScalaSourceFile
@@ -267,7 +268,7 @@ class ScalaTestMainTab extends SharedJavaMainTab {
       val model = JavaCore.create(ResourcesPlugin.getWorkspace.getRoot)
       if (model != null) {
         try {
-          projects = model.getJavaProjects.filter(proj => ScalaPlugin.plugin.isScalaProject(proj))
+          projects = model.getJavaProjects.filter(proj => FromScalaPlugin.isScalaProject(proj))
         }
         catch { case e: JavaModelException => JDIDebugUIPlugin.log(e) }
       }
