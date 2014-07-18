@@ -42,7 +42,7 @@ import scala.annotation.tailrec
 import org.eclipse.jdt.core.IJavaElement
 import org.scalaide.core.internal.jdt.model.ScalaClassElement
 import org.scalaide.core.internal.jdt.model.ScalaElement
-import org.scalaide.core.ScalaPlugin
+import org.scalaide.core.IScalaPlugin
 import org.eclipse.core.resources.IProject
 import org.scalaide.core.internal.jdt.model.ScalaCompilationUnit
 import scala.reflect.internal.util.OffsetPosition
