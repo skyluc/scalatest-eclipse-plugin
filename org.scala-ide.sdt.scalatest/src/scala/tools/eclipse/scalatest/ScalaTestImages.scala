@@ -37,7 +37,6 @@
 package scala.tools.eclipse.scalatest
 
 import java.net.MalformedURLException
-import org.scalaide.ui.internal.ScalaImages
 import org.eclipse.jface.resource.ImageDescriptor
 import org.eclipse.core.runtime.Platform
 import java.net.URL
@@ -77,7 +76,7 @@ object ScalaTestImages {
       ImageDescriptor.createFromURL(url)
     } catch {
       case _ : MalformedURLException =>
-        ScalaImages.MISSING_ICON
+        ImageDescriptor.getMissingImageDescriptor
     }    
   }
   
