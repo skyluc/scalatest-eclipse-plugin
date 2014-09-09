@@ -73,7 +73,7 @@ import ScalaTestLaunchShortcut._
 import org.eclipse.ui.IEditorSite
 import org.eclipse.ui.IEditorInput
 import scala.reflect.NameTransformer
-import org.scalaide.core.compiler.ScalaPresentationCompiler
+import org.scalaide.core.compiler.IScalaPresentationCompiler
 import scala.reflect.internal.util.BatchSourceFile
 
 class ScalaTestFileLaunchShortcut extends ILaunchShortcut {
@@ -195,7 +195,8 @@ object ScalaTestLaunchShortcut {
           case Left(tree) =>
             tree.children.find {
               case classDef: ClassDef if classDef.symbol.fullName == iType.getFullyQualifiedName =>
-                val linearizedBaseClasses = compiler.askOption[List[compiler.Symbol]](() => classDef.symbol.info.baseClasses).getOrElse(List.empty)
+                import org.scalaide.core.compiler.IScalaPresentationCompiler.Implicits._
+                val linearizedBaseClasses: List[compiler.Symbol] = compiler.asyncExec(classDef.symbol.info.baseClasses).getOrElse(List.empty)()
                 linearizedBaseClasses.find { baseClass =>
                   baseClass.fullName == "org.scalatest.Suite"
                 } match {
