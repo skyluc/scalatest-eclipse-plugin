@@ -27,10 +27,11 @@
     <repo.eclipse.kepler>http://download.eclipse.org/releases/kepler/</repo.eclipse.kepler>
     <repo.eclipse.luna>http://download.eclipse.org/releases/luna/</repo.eclipse.luna>
     <repo.ajdt.indigo>http://download.eclipse.org/tools/ajdt/37/dev/update</repo.ajdt.indigo>
+    <repo.ajdt.luna>http://download.eclipse.org/tools/ajdt/44/dev/update</repo.ajdt.luna>
     <repo.scala-ide.root>http://download.scala-ide.org</repo.scala-ide.root>
 
     <!-- fixed versions -->
-    <tycho.version>0.18.1</tycho.version>
+    <tycho.version>0.20.0</tycho.version>
     <scalatest-finders.version>0.9.6</scalatest-finders.version>
     <scala.plugin.version>3.1.5</scala.plugin.version>
 
@@ -41,11 +42,11 @@
     <tycho.test.jvmArgs>-Xmx800m -XX:MaxPermSize=256m -Dsdtcore.headless ${tycho.test.weaving} ${tycho.test.OSspecific}</tycho.test.jvmArgs>
 
     <!-- dependencies repos -->
-    <repo.eclipse>${repo.eclipse.indigo}</repo.eclipse>
-    <repo.ajdt>${repo.ajdt.indigo}</repo.ajdt>
+    <repo.eclipse>${repo.eclipse.luna}</repo.eclipse>
+    <repo.ajdt>${repo.ajdt.luna}</repo.ajdt>
 
     <!-- some default values, can be overwritten by profiles -->
-    <scala.version>2.11.1</scala.version>
+    <scala.version>2.11.2</scala.version>
     <version.suffix>2_11</version.suffix>
     <scala.version.short>2.11</scala.version.short>
     <version.tag>local</version.tag>
